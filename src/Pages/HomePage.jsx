@@ -109,24 +109,23 @@ export const HomePage = () => {
         }}
       >
         <AppBar position="static">
-          <Toolbar>
-            <Box
-              sx={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
+          <Toolbar
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography sx={{ fontWeight: 700, fontSize: "1.1rem" }}>
+              Shop
+            </Typography>
+            <Button
+              color="inherit"
+              sx={{ fontWeight: 700, fontSize: "1.1rem" }}
+              onClick={() => navigate("/buy_product")}
             >
-              <Typography>Shop</Typography>
-              <Button
-                color="inherit"
-                sx={{ fontWeight: 700, fontSize: "1.1rem" }}
-                onClick={() => navigate("/buy_product")}
-              >
-                Checkout
-              </Button>
-            </Box>
+              Checkout
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>

@@ -144,8 +144,14 @@ export default function Checkout() {
           }}
         >
           <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Toolbar
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography sx={{ fontWeight: 700, fontSize: "1.1rem" }}>
                 Shop
               </Typography>
               <Button
@@ -158,7 +164,7 @@ export default function Checkout() {
             </Toolbar>
           </AppBar>
         </Box>
-        <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+        <Container component="main" maxWidth="sm" sx={{ mb: 4, mt: 8 }}>
           <Paper
             variant="outlined"
             sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
