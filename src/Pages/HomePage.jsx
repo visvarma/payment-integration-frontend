@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Chip, Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -17,6 +18,22 @@ export const HomePage = () => {
       field: "user_email",
       headerName: "User Email",
       width: 190,
+    },
+    {
+      field: "payment_status",
+      headerName: "Payment Status",
+      width: 150,
+      renderCell: (params) => {
+        return (
+          <>
+            {params.value === "paid" ? (
+              <Chip color="success" label={params.value.toUpperCase()}></Chip>
+            ) : (
+              <Chip color="error" label={params.value.toUpperCase()}></Chip>
+            )}
+          </>
+        );
+      },
     },
 
     {
@@ -45,13 +62,10 @@ export const HomePage = () => {
       field: "date",
       headerName: "Date",
       type: "date",
-      width: 140,
+      width: 250,
       align: "left",
-    },
-    {
-      field: "payment_status",
-      headerName: "Payment Status",
-      width: 150,
+      valueFormatter: (params) =>
+        moment(params?.value).format("DD/MM/YYYY hh:mm A"),
     },
   ];
 

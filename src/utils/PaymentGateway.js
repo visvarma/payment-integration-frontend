@@ -23,7 +23,7 @@ export default async function displayRazorpay(formValues) {
     order_id: data._order.id,
     handler: (response) => {
       alert("Payment Successfull");
-      navigate(`/`);
+      window.location = "/";
     },
     prefill: {
       name: "Vishal Varma",
