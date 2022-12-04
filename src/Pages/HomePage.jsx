@@ -56,7 +56,9 @@ export const HomePage = () => {
   ];
 
   const getOrderData = async () => {
-    const res = await fetch("http://localhost:3001/app/order/get_all/vrv123");
+    const res = await fetch(
+      "https://payment-integration-backend-production.up.railway.app/app/order/get_all/vrv123"
+    );
     const data = await res.json();
     console.log(data);
 
